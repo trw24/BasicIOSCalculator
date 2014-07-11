@@ -109,7 +109,14 @@
 
 -(void)     userEntersFunction:(NSString *)userInput
 {
+    
+    if ([self.pendingFunctionString length])
+    {
+        [self userEntersEqual];
+    }
+
     self.pendingFunctionString = userInput;
+
     self.previousTotalString = self.currentTotalString;
     self.currentTotalString = @"0";
     self.statusMessageString = @"";
